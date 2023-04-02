@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <style>
+      * {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: rgb(228, 235, 245);
+        color: rgb(0, 0, 0);
+      }
+
+      input {
+        background: rgb(228, 235, 245);
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        outline: none;
+        border: none;
+        margin-bottom: 1.5rem;
+        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem white;
+      }
+
+      .form_outer {
+        padding-top: 2rem;
+        width: 70vw;
+        margin: auto;
+        margin-top: 2rem;
+        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem white;
+        transition: width 0.1s;
+      }
+
+      form {
+        width: 90%;
+        margin: auto;
+        text-align: left;
+        padding: 1rem 0rem;
+      }
+
+      label {
+        display: block;
+        margin: 0rem 0rem 0.8rem 0rem;
+      }
+
+      .submit_btn {
+        transition: transform 0.01s;
+        margin: 1rem 0rem;
+      }
+
+      .submit_btn:hover input {
+        cursor: pointer;
+      }
+
+      .submit_btn:active {
+        transform: translateY(2px);
+      }
+
+      .cap_img img {
+        display: block;
+        margin: auto;
+      }
+      h1 {
+        text-align: center;
+        font-size: 23px;
+      }
+
+      @media (max-width: 700px) {
+        .form_outer {
+          width: 90vw;
+        }
+
+        * {
+          font-size: 14px;
+        }
+
+        form {
+          width: 85%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form_outer">
+      <div class="heading">
+        <h1>RGPV Result</h1>
+      </div>
+      <br />
+      <form action="marks/" method="POST" target="_blank">
+        {% csrf_token %}
+        <div class="roll">
+          <label for="roll">Roll Number </label>
+          <input
+            type="text"
+            name="roll"
+            id="roll"
+            required
+            placeholder="Rollnumber"
+          />
+        </div>
+        <div class="sem">
+          <label for="sem">Semester: </label>
+          <input
+            type="Number"
+            name="sem"
+            id="sem"
+            required
+            placeholder="Semester"
+            min="1"
+            max="8"
+          />
+        </div>
+        <div class="cap">
+          <div class="cap_img">
+            <img src="{{link}}" alt="" />
+          </div>
+          <label for="cap">Captcha</label>
+          <input
+            type="text"
+            name="cap"
+            id="cap"
+            required
+            placeholder="Captcha"
+          />
+        </div>
+        <div class="submit_btn">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
