@@ -5,4 +5,3 @@
 The system will be designed as a web application that students can access using their credentials. It will be developed using **`Python`** web framework **`Django`** , and will utilize a database to store student information and results.
 
 The system will also include features such as search functionality, data visualization, and notifications for new results. It will be designed to be user-friendly and accessible on both desktop and mobile devices.
-
