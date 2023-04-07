@@ -16,7 +16,8 @@ Open your web browser and navigate to `http://127.0.0.1:8000`
 Communicates with the college server using HTTP requests and retrieves academic performance data in HTML format.
 - Parses the retrieved HTML data and displays the academic performance data in a user-friendly format on the web interface.
 - Built using the Python programming language and the Django web development framework.
-##Technologies Used
+
+## Technologies Used
 - Python programming language
 - Django web development framework
 - HTTP request library
